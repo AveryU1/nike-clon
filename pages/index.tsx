@@ -2,10 +2,12 @@
 // import Image from "next/image";
 // import styles from "../styles/Home.module.css";
 import { NextPage } from 'next'
+import Header from '../components/Navbar/Header';
+
 
 const Home: NextPage = () => (
   <div>
-    <h1 className="text-3xl font-bold underline">Bienvenidos a mi sitio web</h1>
+    <Header/>
   </div>
 )
 
