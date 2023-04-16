@@ -10,6 +10,7 @@ import Header from '../components/Navbar/Header'
 
 
 
+
 interface Props {
   heroProducts : [HeroProduct]
 }
