@@ -9,11 +9,6 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
-<<<<<<< HEAD
-.bg-custom {
-  background-image: url("/public/assets/nike-banner.webp");
-}
-=======
 
 a {
   color: inherit;
@@ -27,4 +22,3 @@ a {
 li {
   list-style: none;
 }
->>>>>>> bd7f29a81d80cc0ac7152e74ba15c0a2d0011aca
