@@ -3,20 +3,20 @@ export const navLinks = [
         id: 1,
         title: 'New & Featured',
         submenu: true,
-        fields: {
+        fields: [{
             title: 'New arrivals',
             options: [
                { name: '100s of Styles Added'},
                 { name: 'SNKRS Launch Calendar'},
                 { name: 'New & Upcoming Drops'}
             ]
-        }
+        }]
     },
     {
         id: 2,
         title: 'Man',
         submenu: true,
-        fields: {
+        fields: [{
             title: 'All shoes',
             options: [
                 { name: 'All Shoes'},
@@ -29,13 +29,13 @@ export const navLinks = [
                 { name: 'Running'},
                 { name: 'Soccer'}
             ]
-        }
+        }]
     },
     {
         id: 3,
         title: 'Woman',
         submenu: true,
-        fields: {
+        fields: [{
             title: 'All Shoes',
             options: [
                 { name: 'Lifestyle'},
@@ -48,13 +48,13 @@ export const navLinks = [
                 { name: 'Basketball'},
                 { name: 'Shoes $100 & Under'}
             ]
-        }
+        }]
     },
     {
         id: 4,
         title: 'Kids',
         submenu: true,
-        fields: {
+        fields: [{
             title: 'All Shoes',
             options: [
                 { name: 'Big Kids (3.5Y - 7Y)'},
@@ -67,6 +67,6 @@ export const navLinks = [
                 { name: 'Running'},
                 { name: 'Easy On & Off'}
             ]
-        }
+        }]
     }
 ]
