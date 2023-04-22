@@ -16,13 +16,14 @@ interface Props {
 }
 const Home = ({heroProducts}: Props) => {
   console.log(heroProducts);
+
   
   
 return(
   <div className='bg-light-gray'>
-    <Header />
+   <Header />
    <Banner />
-   <Hero heroProducts={[]} />
+   <Hero heroProducts={heroProducts}  />
   </div>
   
 )

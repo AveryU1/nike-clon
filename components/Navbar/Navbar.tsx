@@ -29,7 +29,9 @@ const Navbar = () => {
                                   <h3 className='text-base font-medium'>{category.title}</h3>
                                   {
                                     category.options.map((option) => (
-                                      <li className='text-sm text-zinc-400 my-2.5 cursor-pointer hover:text-black'>{option.name}</li>
+                                      <ul key={option.name}>
+                                        <li className='text-sm text-zinc-400 my-2.5 cursor-pointer hover:text-black'>{option.name}</li>
+                                      </ul>
                                     ))
                                   }
                                 </div>
@@ -47,15 +49,18 @@ const Navbar = () => {
                 <div className={`${subMenu === categories.title ? 'md:hidden' : 'hidden'}`}>
                   {
                     categories.fields.map((category) => (
-                      <div>
+                      <div key={category.title}>
                         <div>
                           <h3 className='py-4 pl-7 font-medium md:pr-0 pr-5 ' >{category.title}
                            
                           </h3>
                           <div>
                           {
-                            category.options.map((option) => (
-                              <li className='py-3 pl-14 text-sm text-zinc-400 my-2.5 cursor-pointer hover:text-black'>{option.name}</li>
+                            category.options.map((option, index) => (
+                              <ul key={index}>
+
+                                <li  className='py-3 pl-14 text-sm text-zinc-400 my-2.5 cursor-pointer hover:text-black'>{option.name}</li>
+                              </ul>
                             ))
                           }
                           </div>
