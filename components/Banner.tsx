@@ -1,10 +1,12 @@
-import React from 'react'
+import SliderBanner from "./Navbar/SliderBanner";
 
-type Props = {}
 
-const Banner = (props: Props) => {
+
+const Banner = () => {
   return (
-    <div className='px-6 mt-6'>
+    <>
+    <SliderBanner />
+    <div className='px-6'>
       <div className="bg-[url('../public/assets/nike-banner.webp')] h-96 bg-center bg-cover bg-no-repeat" ></div>
       <section className='text-center'>
         <h1 className='uppercase text-black text-5xl font-extrabold py-8 '>Make Waves in air</h1>
@@ -15,6 +17,7 @@ const Banner = (props: Props) => {
       </article>
       
     </div>
+    </>
   )
 }
 

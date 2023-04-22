@@ -13,16 +13,16 @@ const Navbar = () => {
             navLinks.map((categories) => (
               <div key={categories.id}>
                 <div className='px-3 text-left md:cursor-pointer group'>
-                  <h3 className='py-7 flex justify-between items-center' onClick={() => { subMenu !== categories.title ? setSubMenu(categories.title) : setSubMenu('')}}>{categories.title} 
-                      <span className="lg:hidden hover:rotate-90 ">
+                  <h3 className='py-7 flex justify-between items-center lg:p-[12px] hover:lg:border-b-[1px] hover:xl:border-b-[1px] border-black xl:p-[12px] xs:z-[1]' onClick={() => { subMenu !== categories.title ? setSubMenu(categories.title) : setSubMenu('')}}>{categories.title} 
+                      <span className="lg:hidden md:hidden xl:hidden hover:rotate-90 ">
                           <MdKeyboardArrowRight style={{ fontSize: '20px'}}/>
                       </span>
                   </h3>
                   {
                     categories.submenu && (
                       <div>
-                        <div className='absolute top-20 hidden group-hover:md:block hover:md:block'>
-                          <div className='bg-white p-5 grid grid-cols-3 gap-10'>
+                        <div className='absolute top-18 hidden group-hover:lg:block hover:lg:block group-hover:xl:block hover:xl:block z-[1]'>
+                          <div className='bg-white p-5 grid grid-cols-2 gap-10 z-[1]'>
                             {
                               categories.fields.map((category) => (
                                 <div key={category.title}>
@@ -55,7 +55,7 @@ const Navbar = () => {
                           <div>
                           {
                             category.options.map((option) => (
-                              <li className='py-3 pl-14 text-sm text-zinc-400 my-2.5 cursor-pointer hover:text-black'>{option.name}</li>
+                              <li className='pb-3 pl-14 text-sm text-zinc-400 cursor-pointer hover:text-black'>{option.name}</li>
                             ))
                           }
                           </div>

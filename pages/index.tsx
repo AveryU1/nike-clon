@@ -7,6 +7,7 @@ import Hero from '../components/Hero'
 import { HeroProduct } from '../typings'
 import { sanityClient } from '../sanity'
 import Header from '../components/Navbar/Header'
+import Footer from '../components/footer/Footer'
 
 
 
@@ -23,6 +24,7 @@ return(
     <Header />
    <Banner />
    <Hero heroProducts={[]} />
+   <Footer/>
   </div>
   
 )
