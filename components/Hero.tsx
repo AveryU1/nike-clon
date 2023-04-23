@@ -1,21 +1,22 @@
 import { SanityClient } from 'next-sanity'
 import React from 'react'
 import {sanityClient, urlFor} from "../sanity"
-import { HeroProduct } from '../typings';
+import { HeroProduct, TrendingProduct } from '../typings';
 import Slider from '../features/Slider';
 import {basketballShoes, goWildHome} from "../public/assets"
 import Image from 'next/image';
+import Trending  from '../features/Trending';
 
 
 
 interface Props {
-  heroProducts : [HeroProduct]
+  heroProducts : [HeroProduct],
+  trendingProduct: [TrendingProduct],
 }
 
 
-const Hero = ({heroProducts}: Props)  => {
+const Hero = ({heroProducts, trendingProduct}: Props)  => {
   
-    console.log(heroProducts);
   return (
     <section className='px-6'> 
       <Slider heroProduct={heroProducts}/>
@@ -38,7 +39,7 @@ const Hero = ({heroProducts}: Props)  => {
             </div>
           </div>
           
-          
+          <Trending trendingProduct={trendingProduct}/> 
         </div>
       </div>
       

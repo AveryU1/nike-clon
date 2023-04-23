@@ -14,7 +14,7 @@ const Slider = ({heroProduct}: Props) => {
       setSliderWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
     }
   }, [heroProduct]);
-  console.log(heroProduct);
+  //console.log(heroProduct);
   return (
     <div className="overflow-x-hidden py-4 mb-8" ref={carousel} >
       <motion.div 

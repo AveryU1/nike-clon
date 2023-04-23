@@ -4,7 +4,7 @@
 import { NextPage } from 'next'
 import Banner from '../components/Banner'
 import Hero from '../components/Hero'
-import { HeroProduct } from '../typings'
+import { HeroProduct, TrendingProduct } from '../typings'
 import { sanityClient } from '../sanity'
 import Header from '../components/Navbar/Header'
 import Footer from '../components/footer/Footer'
@@ -13,19 +13,22 @@ import Footer from '../components/footer/Footer'
 
 
 interface Props {
-  heroProducts : [HeroProduct]
+  heroProducts : [HeroProduct],
+  trendingProduct: [TrendingProduct]
 }
-const Home = ({heroProducts}: Props) => {
-  console.log(heroProducts);
+
+
+const Home = ({heroProducts, trendingProduct}: Props) => {
+  console.log( trendingProduct);
 
   
   
 return(
   <div className='bg-light-gray'>
-   <Header />
-   <Banner />
-   <Hero heroProducts={heroProducts}  />
-   <Footer/>
+    <Header />
+    <Banner />
+    <Hero heroProducts={heroProducts} trendingProduct={trendingProduct}/>
+    <Footer/>
   </div>
   
 )
@@ -41,13 +44,23 @@ export const getServerSideProps = async() =>{
       slug
     }`;
   
+  const queryTrending: string = `*[_type == "trendingProduct"] {
+    name,
+    midText,
+    _id,
+    image,
+    slug
+  }`;
+
   const heroProducts = await sanityClient.fetch(query);
+  
+  const trendingProduct: string[] = await sanityClient.fetch(queryTrending);
   return {
       props: {
-          heroProducts
+          heroProducts,
+          trendingProduct
       }
   }
-
 }
 
 

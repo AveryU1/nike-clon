@@ -5,7 +5,7 @@ import { MdKeyboardArrowDown, MdKeyboardArrowRight } from 'react-icons/md'
 
 const Navbar = () => {
 
-  const [subMenu, setSubMenu] = useState('');
+  const [subMenu, setSubMenu] = useState<string>('');
 
   return (
     <>
