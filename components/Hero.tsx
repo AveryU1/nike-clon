@@ -1,21 +1,22 @@
-import { SanityClient } from 'next-sanity'
+
 import React from 'react'
-import {sanityClient, urlFor} from "../sanity"
-import { HeroProduct } from '../typings';
+import { HeroProduct, PopProductsHome } from '../typings';
 import Slider from '../features/Slider';
 import {basketballShoes, goWildHome} from "../public/assets"
-import Image from 'next/image';
+import PopularProducts from '../ui/PopularProducts';
 
 
 
 interface Props {
-  heroProducts : [HeroProduct]
+  heroProducts? : [HeroProduct]
+  popProducts?: [PopProductsHome]
 }
 
 
-const Hero = ({heroProducts}: Props)  => {
+const Hero = ({heroProducts, popProducts }: Props)  => {
   
-    console.log(heroProducts);
+    
+    console.log(popProducts);
   return (
     <section className='px-6'> 
       <Slider heroProduct={heroProducts}/>
@@ -24,7 +25,7 @@ const Hero = ({heroProducts}: Props)  => {
         <div className='w-full' >
           <div className='relative pb-1'>
             <img  src={basketballShoes.src} alt="" />
-            <div className='absolute bottom-4 pl-4'>
+            <div className='absolute bottom-4 pl-4 pb-2'>
               <h3 className='text-light-gray text-lg'>Nike Basketball</h3>
               <p className='text-light-gray text-xl font-medium'>Presenting the <br /> Cosmic Unity 3</p>
               <button className='text-black bg-white px-6 py-2 mt-6 rounded-full font-medium'>Shop</button>
@@ -32,11 +33,12 @@ const Hero = ({heroProducts}: Props)  => {
           </div>
           <div className='relative pb-1'>
             <img src={goWildHome.src} alt="" />
-            <div className='absolute bottom-4 pl-4'>
+            <div className='absolute bottom-4 pl-4 pb-2'>
               <h3 className='text-light-gray text-xl font-medium'>Outdoor Wear For <br />Your  Wildest Adventures</h3>
               <button className='text-black bg-white px-6 py-2 mt-6 rounded-full font-medium'>Shop</button>
             </div>
           </div>
+          <PopularProducts popProducts={popProducts}/>
           
           
         </div>
