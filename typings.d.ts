@@ -25,3 +25,17 @@ export interface PopProductsHome {
     };
 
 }
+
+export interface TrendingProduct {
+    _id: string;
+    name: string;
+    midText: string,
+    image: {
+        assets: {
+            _ref: string;
+        }
+    }
+    slug: {
+        current: string;
+    }
+}

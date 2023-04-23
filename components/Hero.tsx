@@ -1,22 +1,22 @@
 
 import React from 'react'
-import { HeroProduct, PopProductsHome } from '../typings';
+import { HeroProduct, PopProductsHome, TrendingProduct } from '../typings';
 import Slider from '../features/Slider';
 import {basketballShoes, goWildHome} from "../public/assets"
 import PopularProducts from '../ui/PopularProducts';
+import Trending  from '../ui/Trending';
 
 
 
 interface Props {
-  heroProducts? : [HeroProduct]
+  heroProducts? : [HeroProduct],
+  trendingProduct?: [TrendingProduct],
   popProducts?: [PopProductsHome]
 }
 
 
-const Hero = ({heroProducts, popProducts }: Props)  => {
+const Hero = ({heroProducts, popProducts , trendingProduct}: Props)  => {
   
-    
-    console.log(popProducts);
   return (
     <section className='px-6'> 
       <Slider heroProduct={heroProducts}/>
@@ -38,8 +38,8 @@ const Hero = ({heroProducts, popProducts }: Props)  => {
               <button className='text-black bg-white px-6 py-2 mt-6 rounded-full font-medium'>Shop</button>
             </div>
           </div>
+          <Trending trendingProduct={trendingProduct}/> 
           <PopularProducts popProducts={popProducts}/>
-          
           
         </div>
       </div>

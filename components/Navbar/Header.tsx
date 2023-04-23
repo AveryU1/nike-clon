@@ -10,7 +10,7 @@ import { useState } from 'react';
 
 const Header = () => {
 
-  const [openMenu, setOpenMenu] = useState(false);
+  const [openMenu, setOpenMenu] = useState<boolean>(false);
 
   return (
     <nav className='bg-white xs:overflow-hidden px-3 '>
