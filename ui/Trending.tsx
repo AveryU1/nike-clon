@@ -9,7 +9,7 @@ const Trending = ({trendingProduct}: Props) => {
   return (
     <div className='mb-8'>
         <h2 className='text-2xl pb-4'>Trending</h2>
-        <div className='w-full' >
+        <div className='w-full flex flex-col md:flex-row' >
             {
               trendingProduct && (
                 trendingProduct.map((trending) => (
