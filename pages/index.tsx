@@ -23,7 +23,7 @@ const Home = ({heroProducts, popProductsHome, trendingProduct}: Props) => {
 
   
   return(
-  <div className='bg-light-gray'>
+  <div className='bg-light-gray pt-24'>
      <Header />
      <Banner />
      <Hero heroProducts={heroProducts} popProducts={popProductsHome}trendingProduct={trendingProduct}/>
