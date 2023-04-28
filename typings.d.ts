@@ -39,3 +39,24 @@ export interface TrendingProduct {
         current: string;
     }
 }
+
+export interface CardShoes {
+    _id: string;
+    largeText: string;
+    midText: string;
+    image: {
+        assets: {
+            _ref: string;
+        }
+    }
+}
+
+export interface SummerShopProducts {
+    _id: string;
+    name: string;
+    image: {
+        assets: {
+            _ref: string;
+        }
+    }
+}

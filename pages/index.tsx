@@ -4,7 +4,7 @@
 import { NextPage } from 'next'
 import Banner from '../components/Banner'
 import Hero from '../components/Hero'
-import { HeroProduct, PopProductsHome, TrendingProduct } from '../typings'
+import { CardShoes, HeroProduct, PopProductsHome, SummerShopProducts, TrendingProduct } from '../typings'
 import { sanityClient } from '../sanity'
 import Header from '../components/Navbar/Header'
 import Footer from '../components/footer/Footer'
@@ -15,9 +15,11 @@ import Footer from '../components/footer/Footer'
 interface Props {
   heroProducts? : [HeroProduct],
   popProductsHome?: [PopProductsHome],
-  trendingProduct?: [TrendingProduct]
+  trendingProduct?: [TrendingProduct],
+  cardShoes?: [CardShoes],
+  summerShop?: [SummerShopProducts]
 }
-const Home = ({heroProducts, popProductsHome, trendingProduct}: Props) => {
+const Home = ({heroProducts, popProductsHome, trendingProduct, cardShoes, summerShop}: Props) => {
   
 
 
@@ -25,8 +27,15 @@ const Home = ({heroProducts, popProductsHome, trendingProduct}: Props) => {
   return(
   <div className='bg-light-gray pt-24'>
      <Header />
-     <Banner />
-     <Hero heroProducts={heroProducts} popProducts={popProductsHome}trendingProduct={trendingProduct}/>
+     <Banner cardShoes={cardShoes} />
+     <Hero 
+     heroProducts={heroProducts} 
+     popProducts={popProductsHome}
+     trendingProduct={trendingProduct} 
+     cardShoes={cardShoes}
+     summerShop={summerShop}
+     />
+    
      <Footer/>
   </div>
   
@@ -59,15 +68,31 @@ export const getServerSideProps = async() =>{
       price, 
       slug
     }`
+
+    const cardShoesQuery = `*[_type == "cardShoes"] {
+      largeText,
+      midText,
+      image,
+      _id
+    }`
+    
+
+    const summerShopQuery = `*[_type == 'summerShop'] {
+      name, 
+      image
+    }`
     const heroProducts = await sanityClient.fetch(query);
-  
-  const trendingProduct: string[] = await sanityClient.fetch(queryTrending);
+    const trendingProduct: string[] = await sanityClient.fetch(queryTrending);
     const popProductsHome = await sanityClient.fetch(popProductsQuery)
+    const cardShoes = await sanityClient.fetch(cardShoesQuery)
+    const summerShop = await sanityClient.fetch(summerShopQuery)
   return {
       props: {
           heroProducts,
           popProductsHome,
-          trendingProduct
+          trendingProduct,
+          cardShoes,
+          summerShop
       }
   }
 }

@@ -7,15 +7,16 @@ import { TfiYoutube } from 'react-icons/tfi';
 
 const Footer = () => {
 
-  const [onAccordion, setOnAccordion] = useState<boolean>(false);
+  // const [onAccordion, setOnAccordion] = useState<boolean>(false);
 
-  const handleChanges = (newValue: boolean) => {
-    setOnAccordion(newValue);
-  }
+  // const handleChanges = (newValue: boolean) => {
+  //   setOnAccordion(newValue);
+  // }
 
   return (
     <footer className='bg-black w-full sm:min-h-[200px]'>
-        <div className='flex gap-1 xs:flex-col md:flex-row justify-between xs:mx-auto px-1 pt-10 overflow-hidden '>
+        <div className='flex gap-1 xs:flex-col md:flex-row justify-between xs:mx-auto px-1 pt-10 overflow-hidden pb-4'>
+        <div className='flex xs:flex-col sm:flex-row'>
           <div className='py-2 px-4'>
             {
               footerLinks[0].fields.map((categories, idx) => (
@@ -29,10 +30,12 @@ const Footer = () => {
           </div>
           <div>
             <div className='flex xs:flex-col md:flex-row gap-6 justify-start'>
-              <FooterAccordion onAccordion={onAccordion} setOnAccordion={handleChanges}/>
+              <FooterAccordion />
             </div>
           </div>
-          <div className='flex justify-between items-end'>
+          </div>
+
+          <div className='flex sm:justify-between pr-4 sm:items-end xs:flex-col'>
             <div className='social-media'>
               <ul className='flex'>
                 <li className='btn-social'><Link href='/' ><ImTwitter style={{width: '30px', fontSize: '20px'}}/></Link></li>
@@ -41,7 +44,7 @@ const Footer = () => {
                 <li className='btn-social'><Link href='/' ><ImInstagram style={{width: '30px', fontSize: '20px'}}/></Link></li>
               </ul>
             </div>
-            <div className='sm:relative bottom-3 xs:pl-4'>
+            <div className='sm:relative bottom-3 xs:pl-4 pt-2'>
               <div className='text-white text-xs mb-3 font-medium'>
                 <p>United States</p>
                 <p>2023 Nike, Inc. All Rights Reserves </p>
@@ -49,7 +52,7 @@ const Footer = () => {
             </div>
             <div className='xs:pl-4'>
               <div>
-                <ul className='md:flex flex-wrap'>
+                <ul className='md:flex flex-wrap gap-4'>
                 {
                   termsFooter.map((terms) => (
                     <li key={terms.names} className='text-[#7e7e7e] text-xs mb-3 font-medium hover:text-white  mr-1 '>{terms.names}</li>

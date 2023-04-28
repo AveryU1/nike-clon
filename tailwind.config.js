@@ -7,7 +7,7 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
     "./features/**/*.{js,ts,jsx,tsx}",
-
+    "./ui/**/*.{js,ts,jsx,tsx}",
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
@@ -23,13 +23,12 @@ module.exports = {
       },
     },
     screens: {
-      xs: { min: "375px", max: "599px"},
+      xs: { min: "375px" },
       ...defaultTheme.screens,
-      sm: { min: "600px", max: "767px" },
-      md: { min: "768px", max: "1023px" },
-      lg: { min: "1024px", max: "1279px" },
-      xl: { min: "1280px", max: "1535px" },
-      '2xl': { min: "1536px" }
+      sm: { min: "640px" },
+      md: { min: "768px" },
+      lg: { min: "1024px" },
+      xl: { min: "1280px" },
     },
     plugins: [],
   },

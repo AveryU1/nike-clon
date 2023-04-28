@@ -21,12 +21,12 @@ const Header = () => {
               </Link>
               
             </div>
-            <div className='xs:hidden sm:hidden md:hidden flex items-center gap-8'>
+            <div className='xs:hidden sm:inline-flex flex items-center gap-8'>
                 <Navbar />
             </div>
             <ul className='flex gap-3'>
               <li className='cursor-pointer bg-transparent p-3 hover:bg-slate-300 rounded-full'><BsSearch style={{ fontSize: '24px'}}/></li>
-              <li className='cursor-pointer bg-transparent p-3 hover:bg-slate-300 rounded-full xs:hidden'><HiOutlineHeart style={{ fontSize: '26px'}}/></li>
+              <li className='cursor-pointer bg-transparent p-3 hover:bg-slate-300 rounded-full xs:hidden md:inline-flex'><HiOutlineHeart style={{ fontSize: '26px'}}/></li>
               <li className='cursor-pointer bg-transparent p-3 hover:bg-slate-300 rounded-full'><BsHandbag style={{ fontSize: '24px'}}/></li>
               <div className='lg:hidden cursor-pointer' onClick={() => setOpenMenu(!openMenu)}>
                 <li className='cursor-pointer bg-transparent p-3 hover:bg-slate-300 rounded-full md:hidden lg:hidden xl:hidden'>{ openMenu ? <GrClose style={{ fontSize: '24px'}}/> : <AiOutlineMenu style={{ fontSize: '24px'}}/>}</li>
