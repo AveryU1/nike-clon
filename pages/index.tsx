@@ -25,7 +25,7 @@ const Home = ({heroProducts, popProductsHome, trendingProduct, cardShoes, summer
 
   
   return(
-  <div className='bg-light-gray pt-24'>
+  <div className='bg-light-gray'>
      <Header />
      <Banner cardShoes={cardShoes} />
      <Hero 

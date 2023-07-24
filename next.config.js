@@ -8,25 +8,28 @@
 
 // module.exports = nextConfig;
 module.exports = {
-  // ...
-  webpack(config) {
-    config.module.rules.push({
-      test: /\.css$/,
-      use: [
-        "style-loader",
-        "css-loader",
-        {
-          loader: "postcss-loader",
-          options: {
-            postcssOptions: {
-              config: "./postcss.config.js",
-            },
-          },
-        },
-      ],
-    });
+    images: {
+        domains: ["cdn.sanity.io"],
+    },
+    // ...
+    webpack(config) {
+        config.module.rules.push({
+            test: /\.css$/,
+            use: [
+                "style-loader",
+                "css-loader",
+                {
+                    loader: "postcss-loader",
+                    options: {
+                        postcssOptions: {
+                            config: "./postcss.config.js",
+                        },
+                    },
+                },
+            ],
+        });
 
-    return config;
-  },
-  // ...
+        return config;
+    },
+    // ...
 };
