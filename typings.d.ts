@@ -27,7 +27,7 @@ export interface PopProductsHome {
 }
 
 export interface TrendingProduct {
-    _id: string;
+    _id: number;
     name: string;
     midText: string,
     image: {

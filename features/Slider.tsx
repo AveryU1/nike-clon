@@ -34,8 +34,8 @@ const Slider = ({heroProduct, popProducts, summerShop}: Props) => {
           ))
         }
         {
-          !heroProduct && popProducts && popProducts.map((item) => (
-            <div className='min-w-full md:min-w-fit' key={item._id}>
+          !heroProduct && popProducts && popProducts.map((item, indx) => (
+            <div className='min-w-full md:min-w-fit' key={indx}>
               <img className='md:w-96' src={urlFor(item.image).url()} alt="" />
               <h4 className='font-medium pt-4 text-base text-black'>{item.name}</h4>
               <h4 className='font-normal text-dark-gray'>{item.category}</h4>
@@ -44,8 +44,8 @@ const Slider = ({heroProduct, popProducts, summerShop}: Props) => {
           ))
         }
         {
-          !heroProduct && !popProducts && summerShop && summerShop.map((item) => (
-            <div className='min-w-full md:min-w-fit' key={item._id}>
+          !heroProduct && !popProducts && summerShop && summerShop.map((item, indx) => (
+            <div className='min-w-full md:min-w-fit' key={indx}>
               <img className='md:w-96' src={urlFor(item.image).url()} alt="" />
               <h4 className='font-normal pt-4 text-black text-xl'>{item.name}</h4>
             </div>
