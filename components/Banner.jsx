@@ -1,20 +1,11 @@
-import { useEffect, useState } from "react";
-import { urlFor } from "../sanity";
-import { CardShoes } from "../typings";
 import SliderBanner from "./Navbar/SliderBanner";
 import { nikeBanner } from "../public/assets";
 
 
+const Banner = ({banner}) => {
 
-interface Props {
-  cardShoes?: [CardShoes]
-}
-const Banner = ({ cardShoes }: Props) => {
-
-  const secondElement = cardShoes && cardShoes.slice(1)
-  console.log(cardShoes?.slice(0, 1));
-
-
+  const secondElement = banner && banner.slice(1)
+  //console.log(banner?.slice(0, 1));
 
   return (
     <>

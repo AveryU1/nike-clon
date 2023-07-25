@@ -1,11 +1,9 @@
 import { urlFor } from "../sanity"
-import { TrendingProduct } from "../typings"
 
-interface Props {
-    trendingProduct?: [TrendingProduct]
-  }
 
-const Trending = ({trendingProduct}: Props) => {
+
+
+const Trending = ({ trendingProduct }) => {
   return (
     <div className='mb-8'>
         <h2 className='text-2xl pb-4'>Trending</h2>

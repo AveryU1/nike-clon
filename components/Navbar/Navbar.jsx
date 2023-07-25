@@ -3,7 +3,7 @@ import { navLinks } from "../../constants";
 import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 
 const Navbar = () => {
-  const [subMenu, setSubMenu] = useState<string>("");
+  const [subMenu, setSubMenu] = useState("");
 
   return (
     <>

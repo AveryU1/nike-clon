@@ -1,12 +1,7 @@
-import React from 'react'
-import { CardShoes } from '../typings'
 
-interface Props {
-    cardShoes?: [CardShoes]
-}
 
-const FeaturedFootwear = ({ cardShoes }: Props) => {
-    const firstElement = cardShoes && cardShoes.slice(0, 1)
+const FeaturedFootwear = ({ banner }) => {
+    const firstElement = banner && banner.slice(0, 1)
 
     return (
         <div className='mb-8'>

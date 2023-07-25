@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 const SliderBanner = () => {
 
-    const [moveSlider, setMoveSlider] = useState<number>(0);
+    const [moveSlider, setMoveSlider] = useState(0);
 
     const progresSlider = () => {
         setMoveSlider(moveSlider => (moveSlider + 1) % sliderBannerLinks.length);

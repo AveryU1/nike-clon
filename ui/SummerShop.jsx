@@ -1,12 +1,8 @@
 import React from 'react'
-import { SummerShopProducts } from '../typings'
 import Slider from '../features/Slider';
 
-interface Props {
-    summerShop?: [SummerShopProducts]
-}
 
-const SummerShop = ({summerShop}: Props) => {
+const SummerShop = ({ summerShop }) => {
     
   return (
     <div>
