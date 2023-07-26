@@ -10,7 +10,7 @@ const Banner = ({banner}) => {
   return (
     <>
       <SliderBanner />
-      <div className='px-6'>
+      <div className='px-6 mb-8'>
         {
           secondElement && secondElement.map((item) => (
             <div key={item._id}>

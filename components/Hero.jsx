@@ -21,35 +21,30 @@ const Hero = ({ banner })  => {
       const products = await sanityClient.fetch(`*[_type == "heroProduct"]`)
       setHeroProducts(products)
     }
-    getDataAboutProducts();
-  }, [])
-
-
-  useEffect(() => {
-    const getDataAboutProducts = async () => {
+    
+    const getDataAboutPopProducts = async () => {
       const productPop = await sanityClient.fetch(`*[_type == "popProductsHome"]`)
       setPopProducts(productPop)
     }
-    getDataAboutProducts();
-  }, [])
-
-
-  useEffect(() => {
+    
     const getDataAboutSummer = async () => {
       const summerData = await sanityClient.fetch(`*[_type == "summerShop"]`)
       setSummerShop(summerData)
     }
-    getDataAboutSummer();
-  }, [])
-
-
-  useEffect(() => {
+    
     const getDataAboutTrending = async () => {
       const trendingData = await sanityClient.fetch(`*[_type == "trendingProduct"]`)
       setTrending(trendingData)
     }
+
+    
+    getDataAboutProducts();
+    getDataAboutPopProducts();
+    getDataAboutSummer();
     getDataAboutTrending();
+
   }, [])
+
   
 
   return (
