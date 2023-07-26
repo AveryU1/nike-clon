@@ -25,3 +25,36 @@ a {
 li {
   list-style: none;
 }
+
+
+@layer components {
+  .social-media {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding-left: 24px;
+    margin-top: 16px;
+    width: 100%;
+  }
+  .btn-social {
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    margin-right: 16px;
+    display: flex;
+    align-items: center;
+  }
+  .btn-social:hover {
+    background-color:#7e7e7e;
+  }
+  @media only screen and (min-width: 600px) {
+    .social-media {
+      margin-top: 0;
+      padding-left: 0;
+      margin-bottom: 16px;
+      justify-content: end;
+    }
+  }
+}

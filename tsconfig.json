@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "sanity_nike-clon/schemas/schema.ts", "components/Navbar/Navbar.jsx", "components/Navbar/Header.jsx", "components/Banner.jsx", "components/FeaturedFootwear.jsx", "components/Hero.jsx", "features/Slider.jsx", "ui/PopularProducts.jsx", "pages/index.jsx", "ui/SummerShop.jsx", "ui/Trending.jsx", "components/NikeMembership.jsx", "ui/SportEssentials.jsx"  ],
   "exclude": [
     "node_modules"
   ]

@@ -10,7 +10,7 @@ import { useState } from 'react';
 
 const Header = () => {
 
-  const [openMenu, setOpenMenu] = useState<boolean>(false);
+  const [openMenu, setOpenMenu] = useState(false);
 
   return (
     <nav className='bg-white xs:overflow-hidden px-3 '>
@@ -21,7 +21,7 @@ const Header = () => {
           </Link>
 
         </div>
-        <div className='xs:hidden sm:hidden md:hidden flex items-center gap-8'>
+        <div className='hidden md:flex items-center gap-8'>
           <Navbar />
         </div>
         <ul className='flex gap-3'>
@@ -37,7 +37,7 @@ const Header = () => {
         {openMenu &&
           (<div className={`overflow-hidden md:hidden cursor-pointer bg-white absolute z-[1] bottom-[-12px] right-0 w-full h-[100%] pb-12 pl-4 duration-500 ${openMenu ? 'left-0' : 'left-[100%]'}`}>
             <div className='lg:hidden cursor-pointer p-5 flex justify-end' onClick={() => setOpenMenu(!openMenu)}>
-              <span className='cursor-pointer sm:hidden'>{openMenu && <GrClose />}</span>
+              <span className='cursor-pointer md:hidden'>{openMenu && <GrClose />}</span>
             </div>
             <Navbar />
           </div>)

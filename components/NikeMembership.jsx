@@ -6,9 +6,9 @@ import {
     nikeMembershipImage,
     shippingImage
 } from '../public/assets'
-type Props = {}
 
-const NikeMembership = (props: Props) => {
+
+const NikeMembership = () => {
     return (
         <div>
             <h2 className='text-2xl pb-4'>Sport Essentials</h2>

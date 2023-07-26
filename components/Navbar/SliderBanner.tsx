@@ -6,28 +6,28 @@ import { useEffect, useState } from "react";
 
 const SliderBanner = () => {
 
-const [moveSlider, setMoveSlider] = useState<number>(0);
+    const [moveSlider, setMoveSlider] = useState(0);
 
-const progresSlider = () => {
-    setMoveSlider(moveSlider => (moveSlider + 1) % sliderBannerLinks.length);
-};
+    const progresSlider = () => {
+        setMoveSlider(moveSlider => (moveSlider + 1) % sliderBannerLinks.length);
+    };
 
-useEffect(() => {
-    const intervalId = setTimeout(() => {
-        progresSlider();
-    }, 5000); 
+    useEffect(() => {
+        const intervalId = setTimeout(() => {
+            progresSlider();
+        }, 5000);
 
-    return () => clearTimeout(intervalId);
-}, [moveSlider]);
+        return () => clearTimeout(intervalId);
+    }, [moveSlider]);
 
-const sliderStyles = {
-    transform: `translateX(${-moveSlider * 100}%)`
-};
+    const sliderStyles = {
+        transform: `translateX(${-moveSlider * 100}%)`
+    };
 
 
 
-  return (
-    
+    return (
+
         <div className="h-auto min-h-[58px] relative bg-[#f5f5f5] pt-3 overflow-hidden whitespace-nowrap">
             <ul className="transition-all" style={sliderStyles}>
                 {sliderBannerLinks.map(bannerText => (
@@ -42,8 +42,8 @@ const sliderStyles = {
                 ))}
             </ul>
         </div>
-    
-  )
+
+    )
 }
 
 export default SliderBanner
